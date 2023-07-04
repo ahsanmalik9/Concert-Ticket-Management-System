@@ -1,0 +1,546 @@
+#include<iostream>
+#include<conio.h>
+#include<string>
+#include<iomanip>
+
+int salesman();
+int singer();
+void welcome();
+int guards();
+
+
+using namespace std;
+struct tickets {
+	string f_name;
+	string s_name;
+	long long int cnic;
+	long long int ph_no;
+};
+int main() {
+	welcome();
+	_getch();
+	system("cls");
+b:
+	cout << "Please select from the following options:\n\t1:Manager\n\t2:User\n\t3:Exit\n";
+
+	int n;
+	string user_nam, pass;
+	cin >> n;
+	switch (n) {
+	case 1:
+	{
+
+	a:
+		cout << "Enter Username: ";
+		cin >> user_nam;
+		cout << "Enter Password: ";
+		cin >> pass;
+
+
+		if (user_nam == "1234" && pass == "1234") {
+			system("cls");
+			cout << "WELCOME  MANAGER\n ";
+		w:
+			cout << "Select from the following options:\n ";
+			cout << "2: Employees\n3:Singers\n4: Back\n5: Exit\n";
+			int s;
+			cin >> s;
+			switch (s) {
+
+			case 2: {
+			q:system("cls");
+				cout << "Select from the following options:\n ";
+				cout << "1: Guards\n2: salesman\n3: Back\n4: Exit\n";
+				int e;
+				cin >> e;
+				switch (e) {
+				case 1: {int u;
+					u = guards();
+					if (u == 1) {
+						goto q;
+					}
+				}
+				case 2: {int o;
+					o = salesman();
+					if (o == 1) {
+						goto q;
+					}
+				}
+				case 3: {
+					goto w;
+				}
+				case 4: {
+					return 0;
+
+				}
+				}break;
+			}
+			case 3: {int y;
+				y = singer();
+				if (y == 1) {
+
+					goto w;
+
+				}
+
+				break;
+			}case 4: {system("cls");
+			goto b;
+			}case 5: {
+				return 0;
+			}default: {
+				cout << "\nWrong input select the right option.\n";
+				goto w;
+
+			}
+			}
+		}
+
+		else {
+			cout << "Wrong username or password\n ";
+			cout << "Select from the following options:\n ";
+			cout << "1:try again\n2:go to main manue";
+
+			int b;
+			cin >> b;
+			switch (b) {
+			case 1: {
+				system("cls");
+				goto a;
+			}
+			case 2:
+			{
+				system("cls");
+				goto b;
+			}
+			}
+		}
+	}
+	case 2:
+	{system("cls");
+	int io; jh:
+	cout << "\nSelect from the following options:" << endl;
+	cout << "1.Tickets" << endl;
+	cout << "2.Singers" << endl;
+	cout << "3.back" << endl;
+	cout<<"4.Exit"<<endl;
+	cin >> io;
+	switch (io) {
+	case 1: {
+		tickets platinum[50];
+		tickets golden[100];
+		tickets silver[200];
+		int d; fg:
+		cout << "Select from the following options\n";
+		cout << "1.PLATINUM tickets=Rs 2000\n 2.GOLDEN tickets=Rs 1500\n 3.SILVER tickets=Rs 1000\n";
+		cin >> d;
+		switch (d) {
+		case 1: {system("cls"); int h, t;
+			cout << "How many tickets do you want: ";
+			cin >> h;
+			cout << "Total bill:Rs " << h * 2000;
+			cout << "\nselect your payyment method";
+			cout << "\n1. credit card\n2. cash\n";
+
+			cin >> t;
+			system("cls");
+			switch (t) {
+			case 1: {
+				for (int i = 0; i < h; i++) {
+					cout << "Enter your first name: ";
+					cin >> platinum[i].f_name;
+					cout << "Enter your Second name: ";
+					cin >> platinum[i].s_name;
+					cout << "Enter your cnic: ";
+					cin >> platinum[i].cnic;
+					cout << "Enter your phone no: ";
+					cin >> platinum[i].ph_no;
+				}system("cls");
+				cout << "\n Here are your Tickets\n\n";
+				for (int i = 0; i < h; i++) {
+					cout << "\n---------------------------------------------------\n";
+					cout << "*******************Concert Ticket******************\n";
+					cout << "---------------------------------------------------\n";
+					cout << " Name : ";
+					cout << platinum[i].f_name;
+					cout << " " << platinum[i].s_name;
+					cout << "\n CNIC : ";
+					cout << platinum[i].cnic;
+					cout << "\n Phone no : ";
+					cout << platinum[i].ph_no;
+					cout << "\n---------------------------------------------------\n";
+					cout << setw(50) << "Payment method:Credit card\n";
+					cout << "---------------------------------------------------\n\n";
+
+				}char df;
+				cout << "Do you want to buy Again?(y/n)";
+				cin >> df;
+				if (df == 'y') {
+					goto fg;
+				}
+				else {
+					goto jh;
+
+				}
+				break;
+			}case 2: {
+				for (int i = 0; i < h; i++) {
+					cout << "Enter your first name: ";
+					cin >> platinum[i].f_name;
+					cout << "Enter your second name: ";
+					cin >> platinum[i].s_name;
+					cout << "Enter your cnic: ";
+					cin >> platinum[i].cnic;
+					cout << "Enter your phone no: ";
+					cin >> platinum[i].ph_no;
+				}
+				system("cls");
+				cout << "\n Here are your Tickets\n\n";
+				for (int i = 0; i < h; i++) {
+					cout << "\n---------------------------------------------------\n";
+					cout << "*******************Concert Ticket******************\n";
+					cout << "---------------------------------------------------\n";
+					cout << "Name : ";
+					cout << platinum[i].f_name;
+					cout << " " << platinum[i].s_name;
+					cout << "\n CNIC : ";
+					cout << platinum[i].cnic;
+					cout << "\nPhone no : ";
+					cout << platinum[i].ph_no;
+					cout << "\n---------------------------------------------------\n";
+					cout << setw(50) << "payment method:Cash\n";
+					cout << "---------------------------------------------------\n\n";
+				}char df;
+				cout << "Do you want to buy Again?(y/n)"; cin >> df;
+				if (df == 'y') {
+					goto fg;
+				}
+				else {
+					goto jh;
+
+
+				}
+
+			}break;
+			}break;
+		}
+		case 2: {system("cls");
+			int h, t;
+			cout << "How many tickets do you want: ";
+			cin >> h;
+
+			cout << "Total bill:Rs " << h * 1500;
+			cout << "\nSelect your payyment method";
+			cout << "\n1. Credit card\n2. Cash\n";
+			cin >> t;
+			switch (t) {
+			case 1: {
+				for (int i = 0; i < h; i++) {
+					cout << "Enter your first name: ";
+					cin >> golden[i].f_name;
+					cout << endl;
+					cout << "Enter your Second name: ";
+					cin >> golden[i].s_name;
+					cout << endl;
+
+					cout << "Enter your cnic: ";
+					cin >> golden[i].cnic;
+					cout << endl;
+
+					cout << "Enter your phone no: ";
+					cin >> golden[i].ph_no;
+										cout << endl;
+
+				}system("cls");
+				cout << "\n Here are your Tickets\n\n";
+				for (int i = 0; i < h; i++) {
+					cout << "\n---------------------------------------------------\n";
+					cout << "*******************Concert Ticket******************\n";
+					cout << "---------------------------------------------------\n";
+					cout << " Name : ";
+					cout << golden[i].f_name;
+					cout << endl;
+
+					cout << " " << golden[i].s_name;
+					cout << "\n CNIC : ";
+					cout << golden[i].cnic;
+					cout << endl;
+
+					cout << "\n Phone no : ";
+					cout << golden[i].ph_no;
+					cout << endl;
+
+					cout << "\n---------------------------------------------------\n";
+					cout << setw(50) << "payment method:Credit card\n";
+					cout << "---------------------------------------------------\n\n";
+				}char df;
+				cout << "Do you want to buy Again?(y/n)";
+				cin >> df;
+				cout << endl;
+
+
+				if (df == 'y') {
+					goto fg;
+				}
+				else {
+					goto jh;
+
+				}break;
+			}case 2: {system("cls");
+			for (int i = 0; i < h; i++) {
+
+				cout << "Enter your first name";
+				cin >> golden[i].f_name;
+				cout << endl;
+
+				cout << "Enter your second name";
+				cin >> golden[i].s_name;
+				cout << endl;
+
+				cout << "Enter your cnic";
+				cin >> golden[i].cnic;
+				cout << endl;
+
+				cout << "Enter your phone no";
+				cin >> golden[i].ph_no;
+				cout << endl;
+
+			}system("cls");
+			cout << "\n Here are your Tickets\n\n";
+			for (int i = 0; i < h; i++) {
+				cout << "\n---------------------------------------------------\n";
+				cout << "*******************Concert Ticket******************\n";
+				cout << "---------------------------------------------------\n";
+				cout << "Name : ";
+				cout << golden[i].f_name;
+				cout << " " << golden[i].s_name;
+				cout << "\n CNIC : ";
+				cout << golden[i].cnic;
+				cout << endl;
+
+				cout << "\nPhone no : ";
+				cout << golden[i].ph_no;
+				cout << endl;
+
+				cout << "\n---------------------------------------------------\n";
+				cout << setw(50) << "payment method:Cash\n";
+				cout << "---------------------------------------------------\n\n";
+			}char df;
+			cout << "Do you want to buy Again?(y/n)"; cin >> df;
+			if (df == 'y') {
+				goto fg;
+			}
+			else {
+				goto jh;
+
+			}
+
+			}
+			}break;
+
+		}
+		case 3: {system("cls");
+			int h, t;
+			cout << "How many tickets do you want: ";
+			cin >> h;
+
+			cout << "Total bill:Rs " << h * 1000;
+			cout << "\nSelect your payyment method";
+			cout << "\n1. Credit card\n2. Cash\n";
+			cin >> t;
+			switch (t) {
+			case 1: {
+				for (int i = 0; i < h; i++) {
+					cout << "Enter your first name: ";
+					cin >> silver[i].f_name;
+					cout << endl;
+
+					cout << "Enter your second name: ";
+					cin >> silver[i].s_name;
+					cout << endl;
+
+					cout << "Enter your cnic: ";
+					cin >> silver[i].cnic;
+					cout << endl;
+
+					cout << "Enter your phone no: ";
+					cin >> silver[i].ph_no;
+					cout << endl;
+
+				}system("cls");
+				cout << "\n Here are your Tickets\n\n";
+				for (int i = 0; i < h; i++) {
+					cout << "\n---------------------------------------------------\n";
+					cout << "*******************Concert Ticket******************\n";
+					cout << "---------------------------------------------------\n";
+					cout << " Name : ";
+					cout << silver[i].f_name;
+					cout << " " << silver[i].s_name;
+					cout << "\n CNIC : ";
+					cout << silver[i].cnic;
+					cout << "\n Phone no : ";
+					cout << silver[i].ph_no;
+					cout << "\n---------------------------------------------------\n";
+					cout << setw(50) << "payment method:Credit card\n";
+					cout << "---------------------------------------------------\n\n";
+				}
+				char df;
+				cout << "Do you want to buy Again?(y/n)"; cin >> df;
+				if (df == 'y') {
+					goto fg;
+				}
+				else {
+					goto jh;
+
+				}break;
+			}case 2: {system("cls");
+			for (int i = 0; i < h; i++) {
+				cout << "Enter your first name: ";
+				cin >> silver[i].f_name;
+				cout << endl;
+
+				cout << "Enter your second name: ";
+				cin >> silver[i].s_name;
+				cout << endl;
+
+				cout << "Enter your cnic: ";
+				cin >> silver[i].cnic;
+				cout << endl;
+
+				cout << "Enter your phone no: ";
+				cin >> silver[i].ph_no;
+				cout << endl;
+
+			}cout << "\n Here are your Tickets\n\n";
+			for (int i = 0; i < h; i++) {
+				cout << "\n---------------------------------------------------\n";
+				cout << "*******************Concert Ticket******************\n";
+				cout << "---------------------------------------------------\n";
+				cout << "Name : ";
+				cout << silver[i].f_name;
+				cout << " " << silver[i].s_name;
+				cout << "\n CNIC : ";
+				cout << silver[i].cnic;
+				cout << endl;
+
+				cout << "\nPhone no : ";
+				cout << silver[i].ph_no;
+				cout << endl;
+
+				cout << "\n---------------------------------------------------\n";
+				cout << setw(50) << "Payment method:Cash\n";
+				cout << "---------------------------------------------------\n\n";
+			}char df;
+			cout << "Do you want to buy Again?(y/n)"; cin >> df;
+			if (df == 'y') {
+				goto fg;
+			}
+			else {
+				goto jh;
+
+			}break;
+
+			}
+			}
+
+		}break;
+		}break;
+	}case 2: {
+		int y;
+		y = singer();
+		if (y == 1) {
+
+			goto jh;
+			break;
+		}
+	}case 3: {
+		goto b;
+	}
+	case 4: {
+		return 0;
+	}
+	}
+	break;
+	}
+	case 3:
+	{return 0;
+
+	}
+	}
+	return 0;
+
+}
+void welcome() {
+	for (int i = 0; i <= 8; i++) {
+		for (int j = 0; j < 60; j++) {
+			cout << "|*";
+		}cout << endl;
+	} cout << "\n\n\n\t\t\t\t\t\t\tWelcome";
+	cout << " \n\t\t\t\t\t\t      to\tthe\n\t\t\t\t\t";
+	cout << "   Concert Ticket Management System\n\n\n";
+	for (int i = 0; i <= 8; i++) {
+		for (int j = 0; j < 60; j++) {
+			cout << "|*";
+		}cout << endl;
+	}
+}
+int singer() {
+i:
+	cout << "singers and there performens times\n";
+	cout << "Bilal Saeed (2:15pm to 3:15pm)\n";
+	cout << "Asim Azhar  (3:30pm to 4:15pm)\n";
+	cout << "Aima Baig   (5:00pm to 6:00pm)\n";
+	cout << "Atif Aslam  (6:15pm to 7:15pm)\n";
+	cout << endl;
+	cout << "Press 1 to go back";
+	int v;
+	cin >> v;
+	if (v == 1) {
+		system("cls");
+		return 1;
+	}
+	else {
+		cout << "Wrong innput\n";
+		system("cls");
+		goto i;
+	}
+}
+int salesman() {
+s:
+	cout << "Soda     vendors = 5\n";
+	cout << "Popcorn  vendors = 15\n";
+	cout << "Fastfood vendors = 25\n";
+	cout << endl;
+	cout << "Press 1 to go back\n";
+	int r; cin >> r;
+	if (r == 1) {
+		system("cls");
+		return 1;
+	}
+	else {
+		cout << "Wrong input\n";
+		system("cls");
+		goto s;
+	}
+
+}
+int guards() {
+z:
+	cout << "BodyGaurds for the singers: 10\n";
+	cout << "Guards around the stage   : 20\n";
+	cout << "Gurds at the stage        : 10\n";
+	cout << endl;
+	cout << "Press 1 to go back\n";
+	int t; cin >> t;
+	if (t == 1) {
+
+		system("cls");
+		return 1;;
+	}
+	else {
+		cout << "Wrong input\n";
+		system("cls");
+		goto z;;
+	}
+
+}
